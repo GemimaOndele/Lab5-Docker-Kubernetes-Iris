@@ -1,0 +1,11 @@
+== Outils du Lab 5 ==
+  [OK]  docker trouve : /usr/bin/docker
+  [!!]  az introuvable (voir Partie 0, etape installation)
+  [OK]  kubectl trouve : /usr/local/bin/kubectl
+  [OK]  minikube trouve : /usr/local/bin/minikube
+  [OK]  git trouve : /usr/local/bin/git
+  [OK]  le moteur Docker repond (version 29.9.2-2)
+  [OK]  kubectl v1.37.2
+  [OK]  v1.39.0
+
+1 point(s) a corriger avant de continuer.
