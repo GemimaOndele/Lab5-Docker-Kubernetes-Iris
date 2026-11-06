@@ -1,0 +1,2 @@
+["iris-api:v1"] linux/amd64
+["iris-api:v2"] linux/amd64
