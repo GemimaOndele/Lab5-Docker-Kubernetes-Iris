@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: iris-api-cron
+  namespace: iris
+spec:
+  scaleTargetRef:
+    name: iris-api
+  minReplicaCount: 1
+  maxReplicaCount: 4
+  triggers:
+    - type: cron
+      metadata:
+        timezone: Europe/Paris
+        start: 0 8 * * 1-5
+        end: 0 18 * * 1-5
+        desiredReplicas: "4"

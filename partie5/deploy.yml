@@ -1,0 +1,80 @@
+# CI/CD: test -> build & push (ACR) -> deploy (AKS), authenticated with OIDC
+name: ci-cd-aks
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write      # allows the job to request a GitHub OIDC token
+  contents: read
+
+env:
+  IMAGE_NAME: iris-api
+  NAMESPACE: iris
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+      - name: Train the model and run the tests
+        run: |
+          python train.py model/model.joblib
+          python -m pytest -q
+
+  build-push:
+    needs: test
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.meta.outputs.image }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Azure login (OIDC, no stored password)
+        uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Compute the image name
+        id: meta
+        run: echo "image=${{ vars.ACR_NAME }}.azurecr.io/${IMAGE_NAME}:${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+      - name: Build and push to ACR (amd64 runner)
+        run: |
+          az acr login --name "${{ vars.ACR_NAME }}"
+          docker build --build-arg APP_VERSION="${GITHUB_SHA::7}" \
+            -t "${{ steps.meta.outputs.image }}" .
+          docker push "${{ steps.meta.outputs.image }}"
+
+  deploy:
+    needs: build-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - uses: azure/aks-set-context@v5
+        with:
+          resource-group: ${{ vars.RESOURCE_GROUP }}
+          cluster-name: ${{ vars.AKS_NAME }}
+      - name: Deploy the new image
+        uses: azure/k8s-deploy@v7
+        with:
+          namespace: ${{ env.NAMESPACE }}
+          manifests: |
+            k8s/deployment.yaml
+            k8s/service.yaml
+            k8s/hpa.yaml
+          images: ${{ needs.build-push.outputs.image }}
+          pull-images: false   # no docker login needed on this runner
+      # Alternative without the action:
+      # - run: kubectl set image deployment/iris-api iris-api=${{ needs.build-push.outputs.image }} -n iris

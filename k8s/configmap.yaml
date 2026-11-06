@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: iris-config
+  namespace: iris
+data:
+  ENVIRONMENT: "minikube"
+  LOG_LEVEL: "INFO"
+  STARTUP_DELAY: "5"
