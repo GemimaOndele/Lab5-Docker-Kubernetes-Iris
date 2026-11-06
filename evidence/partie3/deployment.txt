@@ -1,0 +1,50 @@
+Name:                   iris-api
+Namespace:              iris
+CreationTimestamp:      Fri, 06 Nov 2026 16:18:33 +0000
+Labels:                 app=iris-api
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=iris-api
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  0 max unavailable, 1 max surge
+Pod Template:
+  Labels:  app=iris-api
+  Containers:
+   iris-api:
+    Image:      iris-api:v1
+    Port:       8000/TCP (http)
+    Host Port:  0/TCP (http)
+    Limits:
+      cpu:     500m
+      memory:  512Mi
+    Requests:
+      cpu:      100m
+      memory:   256Mi
+    Liveness:   http-get http://:http/health delay=0s timeout=1s period=10s successThreshold=1 failureThreshold=3
+    Readiness:  http-get http://:http/ready delay=0s timeout=1s period=5s successThreshold=1 failureThreshold=2
+    Startup:    http-get http://:http/health delay=0s timeout=1s period=2s successThreshold=1 failureThreshold=30
+    Environment Variables from:
+      iris-config  ConfigMap  Optional: false
+    Environment:
+      API_KEY:  <set to the key 'API_KEY' in secret 'iris-secret'>  Optional: false
+    Mounts:
+      /tmp from tmp (rw)
+  Volumes:
+   tmp:
+    Type:          EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:        
+    SizeLimit:     <unset>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   iris-api-57f65fcd4 (2/2 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  13s   deployment-controller  Scaled up replica set iris-api-57f65fcd4 from 0 to 2

@@ -1,0 +1,12 @@
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/iris-api-57f65fcd4-9gnrn   1/1     Running   0          13s
+pod/iris-api-57f65fcd4-tmczb   1/1     Running   0          13s
+
+NAME               TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+service/iris-api   LoadBalancer   10.106.146.45   <pending>     80:31535/TCP   13s
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/iris-api   2/2     2            2           13s
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/iris-api-57f65fcd4   2         2         2       13s
