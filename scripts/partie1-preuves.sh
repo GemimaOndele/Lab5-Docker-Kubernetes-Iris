@@ -33,6 +33,6 @@ curl --fail --silent http://127.0.0.1:8000/ready | tee evidence/partie1/ready.js
 printf '\n'
 curl --fail --silent -H 'Content-Type: application/json' -d '{"features":[5.1,3.5,1.4,0.2]}' http://127.0.0.1:8000/predict | tee evidence/partie1/prediction.json
 printf '\n'
-docker run --rm -e PYTHONPATH=/app -v "$PWD/tests:/tests:ro" -v "$PWD/requirements-dev.txt:/tmp/requirements-dev.txt:ro" --entrypoint sh iris-api:v1 -c 'python -m venv --system-site-packages /tmp/testenv && /tmp/testenv/bin/pip install --no-cache-dir -r /tmp/requirements-dev.txt && /tmp/testenv/bin/python -m pytest -q -p no:cacheprovider /tests'
+docker run --rm -e PYTHONPATH=/app -v "$PWD/tests:/tests:ro" -v "$PWD/requirements-dev.txt:/tmp/requirements-dev.txt:ro" --entrypoint sh iris-api:v1 -c 'python -m pip install --no-cache-dir --target /tmp/testdeps -r /tmp/requirements-dev.txt && PYTHONPATH=/tmp/testdeps:/app python -m pytest -q -p no:cacheprovider /tests'
 echo 'PARTIE1_TESTS_OK — analyse de vulnérabilités et expérience du cache encore à effectuer.'
 
