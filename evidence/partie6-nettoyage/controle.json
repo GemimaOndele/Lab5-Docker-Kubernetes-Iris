@@ -1,0 +1,11 @@
+{
+  "source": "Transcription du résultat LAB5_FINAL_JSON et LAB5_CLEANUP_COMPLETE observé dans Azure Cloud Shell après exécution de j.py.",
+  "utc_after": "2026-11-07T05:12:08.417098+00:00",
+  "scope": "rg-lab5-go",
+  "managed_group": "MC_rg-lab5-go_aks-lab5-go_spaincentral",
+  "group_exists": false,
+  "managed_group_exists": false,
+  "remaining_lab5_resources": 0,
+  "cost_query_status": "HTTP 429 Too Many Requests. Coût définitif non obtenu.",
+  "backup_before_deletion": "Code, preuves et modèle téléchargés et empreinte du modèle vérifiée avant la suppression."
+}
