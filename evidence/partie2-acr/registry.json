@@ -1,0 +1,8 @@
+{
+  "adminUserEnabled": false,
+  "location": "spaincentral",
+  "loginServer": "acrlab5go4271.azurecr.io",
+  "name": "acrlab5go4271",
+  "provisioningState": "Succeeded",
+  "sku": "Basic"
+}

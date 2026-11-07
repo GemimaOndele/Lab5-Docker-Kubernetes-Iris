@@ -1,0 +1,17 @@
+{
+  "assignmentRestrictions": {
+    "providers": []
+  },
+  "clientId": "dc55bd12-6a90-49b4-a72d-10beb09e825a",
+  "id": "/subscriptions/5d564eeb-c928-4d01-9948-76ba3fc789d0/resourcegroups/rg-lab5-go/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-lab5-go-github",
+  "isolationScope": "None",
+  "location": "spaincentral",
+  "name": "id-lab5-go-github",
+  "principalId": "bf278351-efd3-42ad-94a6-6a9b26da0d2b",
+  "resourceGroup": "rg-lab5-go",
+  "tags": {
+    "lab": "lab5"
+  },
+  "tenantId": "a2697119-66c5-4126-9991-b0a8d15d367f",
+  "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+}

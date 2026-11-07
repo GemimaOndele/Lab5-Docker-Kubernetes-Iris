@@ -1,0 +1,13 @@
+[
+  {
+    "audiences": [
+      "api://AzureADTokenExchange"
+    ],
+    "id": "/subscriptions/5d564eeb-c928-4d01-9948-76ba3fc789d0/resourcegroups/rg-lab5-go/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-lab5-go-github/federatedIdentityCredentials/github-main",
+    "issuer": "https://token.actions.githubusercontent.com",
+    "name": "github-main",
+    "resourceGroup": "rg-lab5-go",
+    "subject": "repo:GemimaOndele@128593071/Lab5-Docker-Kubernetes-Iris@1448450025:ref:refs/heads/main",
+    "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials"
+  }
+]
