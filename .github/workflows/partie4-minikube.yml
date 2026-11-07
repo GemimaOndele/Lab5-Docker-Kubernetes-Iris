@@ -5,6 +5,7 @@ on:
     paths: ['.github/workflows/partie4-minikube.yml']
   workflow_dispatch:
 permissions:
+  actions: read
   contents: write
 concurrency:
   group: lab5-partie4-minikube
@@ -15,6 +16,12 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v7
+      - name: Conserver le premier essai et ses erreurs HTTP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p evidence/archives
+          gh api repos/GemimaOndele/Lab5-Docker-Kubernetes-Iris/actions/artifacts/13551088685/zip > evidence/archives/lab5-partie4-premier-essai.zip
       - name: Installer minikube officiel avec verification SHA256
         run: |
           set -euo pipefail
@@ -48,9 +55,9 @@ jobs:
           zip -qr evidence/archives/lab5-partie4-minikube.zip evidence/partie4-minikube
           git config user.name "GemimaOndele"
           git config user.email "128593071+GemimaOndele@users.noreply.github.com"
-          git add evidence/partie4-minikube evidence/archives/lab5-partie4-minikube.zip
+          git add evidence/partie4-minikube evidence/archives/lab5-partie4-minikube.zip evidence/archives/lab5-partie4-premier-essai.zip
           git diff --cached --quiet || git commit -m "Conserver les mesures reelles rolling update et HPA sur minikube"
-          git pull --rebase origin main
+          git -c rebase.autoStash=true pull --rebase origin main
           git push origin HEAD:main
       - uses: actions/upload-artifact@v6
         if: always()
