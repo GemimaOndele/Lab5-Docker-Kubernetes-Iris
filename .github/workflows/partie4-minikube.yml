@@ -55,9 +55,15 @@ jobs:
           zip -qr evidence/archives/lab5-partie4-minikube.zip evidence/partie4-minikube
           git config user.name "GemimaOndele"
           git config user.email "128593071+GemimaOndele@users.noreply.github.com"
-          git add evidence/partie4-minikube evidence/archives/lab5-partie4-minikube.zip evidence/archives/lab5-partie4-premier-essai.zip
-          git diff --cached --quiet || git commit -m "Conserver les mesures reelles rolling update et HPA sur minikube"
-          git -c rebase.autoStash=true pull --rebase origin main
+          target=$(mktemp -d)
+          git fetch origin main
+          git worktree add --detach "$target" origin/main
+          mkdir -p "$target/evidence/archives"
+          cp -a evidence/partie4-minikube "$target/evidence/"
+          cp evidence/archives/lab5-partie4*.zip "$target/evidence/archives/"
+          cd "$target"
+          git add evidence/partie4-minikube evidence/archives/
+          git diff --cached --quiet || git commit -m "Archiver les resultats verifies et le nettoyage minikube"
           git push origin HEAD:main
       - uses: actions/upload-artifact@v6
         if: always()
