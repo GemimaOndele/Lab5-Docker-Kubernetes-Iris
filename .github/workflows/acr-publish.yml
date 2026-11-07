@@ -1,8 +1,6 @@
 name: Lab5 - tests et publication ACR avec OIDC
+# Le TP est clos : execution manuelle uniquement.
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/acr-publish.yml']
   workflow_dispatch:
 permissions:
   contents: read
