@@ -88,4 +88,3 @@ assert summary['max_current_replicas']>2,'No scale-out observed'
 PY
 kc get pods,deploy,svc,hpa -o wide | tee evidence/partie4-minikube/etat-final.txt
 echo PARTIE4_MINIKUBE_PLAN_B_OK
-
