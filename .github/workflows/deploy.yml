@@ -1,13 +1,6 @@
 name: Lab5 - CI CD Iris sur AKS
+# Le TP est clos : execution manuelle uniquement.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'app/**'
-      - 'Dockerfile'
-      - 'requirements*.txt'
-      - 'k8s/**'
-      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 permissions:
   contents: read
