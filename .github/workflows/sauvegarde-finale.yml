@@ -1,0 +1,38 @@
+name: Lab5 - sauvegarde finale sans Azure
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/sauvegarde-finale.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sauvegarde:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Verifier les sources et conserver tous les rapports bruts
+        run: |
+          set -euo pipefail
+          python scripts/audit-publication.py --report evidence/audit-final-publication.json
+          mkdir -p evidence/archives
+          python - <<'PY'
+          import subprocess,zipfile,pathlib
+          paths=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          target=pathlib.Path('evidence/archives/lab5-projet-complet.zip')
+          with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED) as z:
+              for path in paths:
+                  if path and not path.startswith('evidence/archives/'):
+                      z.write(path,'iris-api/'+path)
+              z.write('evidence/audit-final-publication.json','iris-api/evidence/audit-final-publication.json')
+          print('ARCHIVE_OCTETS',target.stat().st_size)
+          PY
+          git config user.name "GemimaOndele"
+          git config user.email "128593071+GemimaOndele@users.noreply.github.com"
+          git add evidence/audit-final-publication.json evidence/archives/lab5-projet-complet.zip
+          git commit -m "Sauvegarder les sources et tous les rapports bruts avant publication"
+          git pull --rebase origin main
+          git push origin HEAD:main
