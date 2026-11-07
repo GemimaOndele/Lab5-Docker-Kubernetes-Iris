@@ -1,0 +1,59 @@
+name: Lab5 - preuves Kubernetes
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/preuves-minikube.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lab5-minikube-preuves
+  cancel-in-progress: false
+jobs:
+  experiences:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - name: Installer minikube officiel avec verification SHA256
+        run: |
+          set -euo pipefail
+          curl -fsSLo /tmp/minikube https://github.com/kubernetes/minikube/releases/download/v1.39.0/minikube-linux-amd64
+          curl -fsSLo /tmp/minikube.sha256 https://github.com/kubernetes/minikube/releases/download/v1.39.0/minikube-linux-amd64.sha256
+          cd /tmp
+          printf '%s  minikube\n' "$(cat minikube.sha256)" | sha256sum -c -
+          sudo install minikube /usr/local/bin/minikube
+      - name: Construire image et verifier cache avec contexte constant
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/partie3-ci evidence/partie1-ci
+          docker build --progress=plain --build-arg APP_VERSION=1.0.0 -t iris-api:v1 . 2>&1 | tee evidence/partie1-ci/build-v1.log
+          context=$(mktemp -d)
+          cp -a Dockerfile requirements.txt train.py app .dockerignore "$context/"
+          docker build --progress=plain --build-arg APP_VERSION=1.0.0 -t iris-api:cache-base "$context" 2>&1 | tee evidence/partie1-ci/cache-reference.log
+          printf '\n# Lab 5: cache demo, no functional change.\n' >> "$context/app/main.py"
+          docker build --progress=plain --build-arg APP_VERSION=1.0.0 -t iris-api:cache-demo "$context" 2>&1 | tee evidence/partie1-ci/cache-code-seul.log
+          docker version > evidence/partie3-ci/docker.txt
+          kubectl version --client > evidence/partie3-ci/kubectl.txt
+          minikube version > evidence/partie3-ci/minikube.txt
+          printf 'Environment: GitHub Actions ubuntu-24.04, amd64\n' > evidence/partie3-ci/environment.txt
+      - name: Deployer deux pods
+        run: bash scripts/partie3-preparer.sh
+      - name: Executer reconciliation, compteurs, ConfigMap et HPA
+        run: bash scripts/partie3-experiences.sh
+      - name: Conserver diagnostics sans secret
+        if: always()
+        run: |
+          mkdir -p evidence/partie3-ci
+          kubectl --context=lab5-go -n iris get pods,deploy,svc,hpa -o wide > evidence/partie3-ci/etat-final.txt 2>&1 || true
+          kubectl --context=lab5-go -n iris get events --sort-by=.lastTimestamp > evidence/partie3-ci/events.txt 2>&1 || true
+          if [ -d evidence/partie3 ]; then cp -a evidence/partie3/. evidence/partie3-ci/; fi
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: lab5-minikube-preuves
+          path: |
+            evidence/partie1-ci/
+            evidence/partie3-ci/
+          retention-days: 7
+          if-no-files-found: error
