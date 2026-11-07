@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: azure/login@v3
         with:
-          client-id: cd55bd12-6a90-49b4-a72d-10beb09e825a
+          client-id: dc55bd12-6a90-49b4-a72d-10beb09e825a
           tenant-id: a2697119-66c5-4126-9991-b0a8d15d367f
           subscription-id: 5d564eeb-c928-4d01-9948-76ba3fc789d0
       - name: Publier les deux versions amd64 sans ACR Tasks
