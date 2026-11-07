@@ -1,8 +1,6 @@
 name: Lab5 - sauvegarde finale sans Azure
+# TP clos : sauvegarde manuelle uniquement.
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/sauvegarde-finale.yml']
   workflow_dispatch:
 permissions:
   contents: write
