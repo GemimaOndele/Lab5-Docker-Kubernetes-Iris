@@ -1,0 +1,3 @@
+NAME                        READY   STATUS    RESTARTS   AGE     IP             NODE                                NOMINATED NODE   READINESS GATES
+iris-api-7b47496675-fpsk9   1/1     Running   0          35s     10.244.0.153   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-n9m5b   1/1     Running   0          6m24s   10.244.0.158   aks-nodepool1-33512245-vmss000000   <none>           <none>

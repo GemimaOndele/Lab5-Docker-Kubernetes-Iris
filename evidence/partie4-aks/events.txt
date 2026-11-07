@@ -1,0 +1,92 @@
+LAST SEEN   TYPE      REASON                 OBJECT                             MESSAGE
+10m         Normal    SuccessfulCreate       replicaset/iris-api-78c59f688b     Created pod: iris-api-78c59f688b-rsjc4
+10m         Normal    SuccessfulCreate       replicaset/iris-api-78c59f688b     Created pod: iris-api-78c59f688b-j8nrf
+10m         Normal    EnsuringLoadBalancer   service/iris-api                   Ensuring load balancer
+10m         Normal    ScalingReplicaSet      deployment/iris-api                Scaled up replica set iris-api-78c59f688b from 0 to 2
+10m         Normal    Scheduled              pod/iris-api-78c59f688b-rsjc4      Successfully assigned iris/iris-api-78c59f688b-rsjc4 to aks-nodepool1-33512245-vmss000000
+10m         Normal    Scheduled              pod/iris-api-78c59f688b-j8nrf      Successfully assigned iris/iris-api-78c59f688b-j8nrf to aks-nodepool1-33512245-vmss000000
+10m         Normal    Pulling                pod/iris-api-78c59f688b-j8nrf      Pulling image "acrlab5go4271.azurecr.io/iris-api:v1"
+10m         Normal    Pulling                pod/iris-api-78c59f688b-rsjc4      Pulling image "acrlab5go4271.azurecr.io/iris-api:v1"
+10m         Normal    EnsuredLoadBalancer    service/iris-api                   Ensured load balancer
+10m         Normal    Pulled                 pod/iris-api-78c59f688b-rsjc4      Successfully pulled image "acrlab5go4271.azurecr.io/iris-api:v1" in 9.314s (9.314s including waiting). Image size: 136491198 bytes.
+10m         Normal    Created                pod/iris-api-78c59f688b-j8nrf      Container created
+10m         Normal    Started                pod/iris-api-78c59f688b-j8nrf      Container started
+10m         Normal    Pulled                 pod/iris-api-78c59f688b-j8nrf      Successfully pulled image "acrlab5go4271.azurecr.io/iris-api:v1" in 9.313s (9.313s including waiting). Image size: 136491198 bytes.
+10m         Normal    Created                pod/iris-api-78c59f688b-rsjc4      Container created
+10m         Normal    Started                pod/iris-api-78c59f688b-rsjc4      Container started
+9m57s       Warning   Unhealthy              pod/iris-api-78c59f688b-rsjc4      Startup probe failed: Get "http://10.244.0.26:8000/health": dial tcp 10.244.0.26:8000: connect: connection refused
+9m57s       Warning   Unhealthy              pod/iris-api-78c59f688b-j8nrf      Startup probe failed: Get "http://10.244.0.225:8000/health": dial tcp 10.244.0.225:8000: connect: connection refused
+9m42s       Normal    Scheduled              pod/iris-api-7b47496675-vr6tm      Successfully assigned iris/iris-api-7b47496675-vr6tm to aks-nodepool1-33512245-vmss000000
+9m42s       Normal    ScalingReplicaSet      deployment/iris-api                Scaled up replica set iris-api-7b47496675 from 0 to 1
+9m42s       Normal    SuccessfulCreate       replicaset/iris-api-7b47496675     Created pod: iris-api-7b47496675-vr6tm
+9m41s       Normal    Pulling                pod/iris-api-7b47496675-vr6tm      Pulling image "acrlab5go4271.azurecr.io/iris-api:v2"
+9m37s       Normal    Created                pod/iris-api-7b47496675-vr6tm      Container created
+9m37s       Normal    Started                pod/iris-api-7b47496675-vr6tm      Container started
+9m37s       Normal    Pulled                 pod/iris-api-7b47496675-vr6tm      Successfully pulled image "acrlab5go4271.azurecr.io/iris-api:v2" in 4.623s (4.623s including waiting). Image size: 136491175 bytes.
+9m28s       Warning   Unhealthy              pod/iris-api-7b47496675-vr6tm      Startup probe failed: Get "http://10.244.0.222:8000/health": dial tcp 10.244.0.222:8000: connect: connection refused
+9m26s       Normal    ScalingReplicaSet      deployment/iris-api                Scaled down replica set iris-api-78c59f688b from 2 to 1
+9m25s       Normal    SuccessfulCreate       replicaset/iris-api-7b47496675     Created pod: iris-api-7b47496675-t4lbs
+9m25s       Normal    SuccessfulDelete       replicaset/iris-api-78c59f688b     Deleted pod: iris-api-78c59f688b-j8nrf
+9m25s       Normal    Scheduled              pod/iris-api-7b47496675-t4lbs      Successfully assigned iris/iris-api-7b47496675-t4lbs to aks-nodepool1-33512245-vmss000000
+9m25s       Normal    ScalingReplicaSet      deployment/iris-api                Scaled up replica set iris-api-7b47496675 from 1 to 2
+9m25s       Normal    Killing                pod/iris-api-78c59f688b-j8nrf      Stopping container iris-api
+9m25s       Normal    Started                pod/iris-api-7b47496675-t4lbs      Container started
+9m25s       Normal    Created                pod/iris-api-7b47496675-t4lbs      Container created
+9m25s       Normal    Pulled                 pod/iris-api-7b47496675-t4lbs      Container image "acrlab5go4271.azurecr.io/iris-api:v2" already present on machine and can be accessed by the pod
+9m20s       Warning   Unhealthy              pod/iris-api-78c59f688b-j8nrf      Readiness probe failed: Get "http://10.244.0.225:8000/ready": dial tcp 10.244.0.225:8000: connect: connection refused
+9m17s       Warning   Unhealthy              pod/iris-api-7b47496675-t4lbs      Startup probe failed: Get "http://10.244.0.192:8000/health": dial tcp 10.244.0.192:8000: connect: connection refused
+9m15s       Normal    Killing                pod/iris-api-78c59f688b-rsjc4      Stopping container iris-api
+9m15s       Normal    SuccessfulDelete       replicaset/iris-api-78c59f688b     Deleted pod: iris-api-78c59f688b-rsjc4
+9m15s       Normal    ScalingReplicaSet      deployment/iris-api                Scaled down replica set iris-api-78c59f688b from 1 to 0
+9m10s       Warning   Unhealthy              pod/iris-api-78c59f688b-rsjc4      Readiness probe failed: Get "http://10.244.0.26:8000/ready": dial tcp 10.244.0.26:8000: connect: connection refused
+8m56s       Normal    ScalingReplicaSet      deployment/iris-api                Scaled up replica set iris-api-6869f474cd from 0 to 1
+8m56s       Normal    SuccessfulCreate       replicaset/iris-api-6869f474cd     Created pod: iris-api-6869f474cd-95nqd
+8m56s       Normal    Scheduled              pod/iris-api-6869f474cd-95nqd      Successfully assigned iris/iris-api-6869f474cd-95nqd to aks-nodepool1-33512245-vmss000000
+8m55s       Normal    BackOff                pod/iris-api-6869f474cd-95nqd      Back-off pulling image "acrlab5go4271.azurecr.io/iris-api:v9"
+8m55s       Warning   Failed                 pod/iris-api-6869f474cd-95nqd      Error: ImagePullBackOff
+8m41s       Normal    Pulling                pod/iris-api-6869f474cd-95nqd      Pulling image "acrlab5go4271.azurecr.io/iris-api:v9"
+8m41s       Warning   Failed                 pod/iris-api-6869f474cd-95nqd      Failed to pull image "acrlab5go4271.azurecr.io/iris-api:v9": [rpc error: code = NotFound desc = failed to pull and unpack image "acrlab5go4271.azurecr.io/iris-api:v9": failed to resolve image: acrlab5go4271.azurecr.io/iris-api:v9: not found, failed to pull and unpack image "acrlab5go4271.azurecr.io/iris-api:v9": failed to resolve image: failed to authorize: failed to fetch anonymous token: unexpected status from GET request to https://acrlab5go4271.azurecr.io/oauth2/token?scope=repository%3Airis-api%3Apull&service=acrlab5go4271.azurecr.io: 401 Unauthorized]
+8m41s       Warning   Failed                 pod/iris-api-6869f474cd-95nqd      Error: ErrImagePull
+8m39s       Normal    SuccessfulDelete       replicaset/iris-api-6869f474cd     Deleted pod: iris-api-6869f474cd-95nqd
+8m39s       Normal    ScalingReplicaSet      deployment/iris-api                Scaled down replica set iris-api-6869f474cd from 1 to 0
+7m25s       Normal    Scheduled              pod/load-gen                       Successfully assigned iris/load-gen to aks-nodepool1-33512245-vmss000000
+7m24s       Normal    Pulling                pod/load-gen                       Pulling image "busybox:1.37"
+7m22s       Normal    Pulled                 pod/load-gen                       Successfully pulled image "busybox:1.37" in 2.296s (2.296s including waiting). Image size: 2222118 bytes.
+7m22s       Normal    Created                pod/load-gen                       Container created
+7m22s       Normal    Started                pod/load-gen                       Container started
+6m26s       Normal    SuccessfulRescale      horizontalpodautoscaler/iris-api   New size: 5; reason: cpu resource utilization (percentage of request) above target
+6m26s       Normal    SuccessfulCreate       replicaset/iris-api-7b47496675     Created pod: iris-api-7b47496675-26wmp
+6m26s       Normal    ScalingReplicaSet      deployment/iris-api                Scaled up replica set iris-api-7b47496675 from 2 to 5
+6m25s       Normal    Scheduled              pod/iris-api-7b47496675-26wmp      Successfully assigned iris/iris-api-7b47496675-26wmp to aks-nodepool1-33512245-vmss000000
+6m25s       Normal    Pulled                 pod/iris-api-7b47496675-zp8xj      Container image "acrlab5go4271.azurecr.io/iris-api:v2" already present on machine and can be accessed by the pod
+6m25s       Normal    Scheduled              pod/iris-api-7b47496675-zp8xj      Successfully assigned iris/iris-api-7b47496675-zp8xj to aks-nodepool1-33512245-vmss000000
+6m25s       Normal    Pulled                 pod/iris-api-7b47496675-n9m5b      Container image "acrlab5go4271.azurecr.io/iris-api:v2" already present on machine and can be accessed by the pod
+6m25s       Normal    SuccessfulCreate       replicaset/iris-api-7b47496675     Created pod: iris-api-7b47496675-n9m5b
+6m25s       Normal    Pulled                 pod/iris-api-7b47496675-26wmp      Container image "acrlab5go4271.azurecr.io/iris-api:v2" already present on machine and can be accessed by the pod
+6m25s       Normal    Created                pod/iris-api-7b47496675-26wmp      Container created
+6m25s       Normal    Scheduled              pod/iris-api-7b47496675-n9m5b      Successfully assigned iris/iris-api-7b47496675-n9m5b to aks-nodepool1-33512245-vmss000000
+6m25s       Normal    SuccessfulCreate       replicaset/iris-api-7b47496675     Created pod: iris-api-7b47496675-zp8xj
+6m24s       Normal    Started                pod/iris-api-7b47496675-n9m5b      Container started
+6m24s       Normal    Created                pod/iris-api-7b47496675-n9m5b      Container created
+6m24s       Normal    Started                pod/iris-api-7b47496675-zp8xj      Container started
+6m24s       Normal    Created                pod/iris-api-7b47496675-zp8xj      Container created
+6m24s       Normal    Started                pod/iris-api-7b47496675-26wmp      Container started
+6m15s       Warning   Unhealthy              pod/iris-api-7b47496675-26wmp      Startup probe failed: Get "http://10.244.0.43:8000/health": dial tcp 10.244.0.43:8000: connect: connection refused
+6m13s       Warning   Unhealthy              pod/iris-api-7b47496675-zp8xj      Startup probe failed: Get "http://10.244.0.44:8000/health": dial tcp 10.244.0.44:8000: connect: connection refused
+6m13s       Warning   Unhealthy              pod/iris-api-7b47496675-n9m5b      Startup probe failed: Get "http://10.244.0.158:8000/health": dial tcp 10.244.0.158:8000: connect: connection refused
+3m48s       Normal    Killing                pod/load-gen                       Stopping container load-gen
+40s         Normal    SuccessfulDelete       replicaset/iris-api-7b47496675     Deleted pod: iris-api-7b47496675-vr6tm
+40s         Normal    ScalingReplicaSet      deployment/iris-api                Scaled down replica set iris-api-7b47496675 from 5 to 2
+40s         Normal    Killing                pod/iris-api-7b47496675-vr6tm      Stopping container iris-api
+40s         Normal    Killing                pod/iris-api-7b47496675-zp8xj      Stopping container iris-api
+40s         Normal    SuccessfulDelete       replicaset/iris-api-7b47496675     Deleted pod: iris-api-7b47496675-zp8xj
+40s         Normal    SuccessfulDelete       replicaset/iris-api-7b47496675     Deleted pod: iris-api-7b47496675-t4lbs
+40s         Normal    Killing                pod/iris-api-7b47496675-t4lbs      Stopping container iris-api
+40s         Normal    SuccessfulRescale      horizontalpodautoscaler/iris-api   New size: 2; reason: All metrics below target
+36s         Normal    SuccessfulCreate       replicaset/iris-api-7b47496675     Created pod: iris-api-7b47496675-fpsk9
+36s         Normal    Scheduled              pod/iris-api-7b47496675-fpsk9      Successfully assigned iris/iris-api-7b47496675-fpsk9 to aks-nodepool1-33512245-vmss000000
+36s         Normal    Killing                pod/iris-api-7b47496675-26wmp      Stopping container iris-api
+35s         Normal    Created                pod/iris-api-7b47496675-fpsk9      Container created
+35s         Normal    Started                pod/iris-api-7b47496675-fpsk9      Container started
+35s         Normal    Pulled                 pod/iris-api-7b47496675-fpsk9      Container image "acrlab5go4271.azurecr.io/iris-api:v2" already present on machine and can be accessed by the pod
+27s         Warning   Unhealthy              pod/iris-api-7b47496675-fpsk9      Startup probe failed: Get "http://10.244.0.153:8000/health": dial tcp 10.244.0.153:8000: connect: connection refused

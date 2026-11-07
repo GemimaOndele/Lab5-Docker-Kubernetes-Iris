@@ -1,0 +1,23 @@
+{
+  "kubernetesVersion": "1.36.4",
+  "location": "spaincentral",
+  "name": "aks-lab5-go",
+  "nodeResourceGroup": "MC_rg-lab5-go_aks-lab5-go_spaincentral",
+  "pools": [
+    {
+      "count": 1,
+      "enableAutoScaling": false,
+      "mode": "System",
+      "name": "nodepool1",
+      "vmSize": "Standard_D2s_v4"
+    }
+  ],
+  "powerState": {
+    "code": "Running"
+  },
+  "provisioningState": "Succeeded",
+  "sku": {
+    "name": "Base",
+    "tier": "Free"
+  }
+}

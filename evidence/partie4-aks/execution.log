@@ -1,0 +1,141 @@
+ENVIRONNEMENT AKS — cluster aks-lab5-go, namespace iris.
+ROLLING UPDATE V1 V2
+deployment.apps/iris-api image updated
+Waiting for deployment "iris-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "iris-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "iris-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "iris-api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "iris-api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "iris-api" rollout to finish: 1 old replicas are pending termination...
+deployment "iris-api" successfully rolled out
+{"trace": "evidence/partie4-aks/rolling-v1-v2.jsonl", "requests": 110, "errors": 0, "versions": ["1.0.0", "2.0.0"]}
+NAME                        READY   STATUS    RESTARTS   AGE   IP             NODE                                NOMINATED NODE   READINESS GATES
+iris-api-7b47496675-t4lbs   1/1     Running   0          28s   10.244.0.192   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-vr6tm   1/1     Running   0          45s   10.244.0.222   aks-nodepool1-33512245-vmss000000   <none>           <none>
+IMAGE V9 ABSENTE ET ANNULATION
+deployment.apps/iris-api image updated
+NAME                        READY   STATUS             RESTARTS   AGE   IP             NODE                                NOMINATED NODE   READINESS GATES
+iris-api-6869f474cd-95nqd   0/1     ImagePullBackOff   0          16s   10.244.0.182   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-t4lbs   1/1     Running            0          45s   10.244.0.192   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-vr6tm   1/1     Running            0          62s   10.244.0.222   aks-nodepool1-33512245-vmss000000   <none>           <none>
+Warning: resource deployments/iris-api was previously managed with 'kubectl apply'. Rolling back will not update the kubectl.kubernetes.io/last-applied-configuration annotation, which may cause unexpected behavior on future 'kubectl apply' operations. Consider using 'kubectl apply' with your previous configuration file instead.
+deployment.apps/iris-api rolled back
+deployment "iris-api" successfully rolled out
+{"trace": "evidence/partie4-aks/v9-annulation.jsonl", "requests": 183, "errors": 0, "versions": ["2.0.0"]}
+HPA SOUS CHARGE
+horizontalpodautoscaler.autoscaling/iris-api created
+pod/load-gen created
+pod/load-gen condition met
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          20s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          26s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          32s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          38s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          44s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          50s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          56s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          61s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          67s
+NAME       REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 4%/50%   2         5         2          73s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         2          79s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         2          85s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          91s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          97s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          103s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          109s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          114s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          2m
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          2m6s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 273%/50%   2         5         5          2m12s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m18s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m24s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m30s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m36s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m42s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m47s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m53s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          2m59s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          3m5s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 237%/50%   2         5         5          3m11s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 166%/50%   2         5         5          3m17s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 166%/50%   2         5         5          3m23s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 166%/50%   2         5         5          3m29s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 166%/50%   2         5         5          3m35s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 166%/50%   2         5         5          3m40s
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: 166%/50%   2         5         5          3m46s
+NAME                        CPU(cores)   MEMORY(bytes)   
+iris-api-7b47496675-26wmp   161m         100Mi           
+iris-api-7b47496675-n9m5b   174m         100Mi           
+iris-api-7b47496675-t4lbs   162m         100Mi           
+iris-api-7b47496675-vr6tm   173m         100Mi           
+iris-api-7b47496675-zp8xj   161m         100Mi           
+load-gen                    159m         2Mi             
+NAME                        READY   STATUS    RESTARTS   AGE     IP             NODE                                NOMINATED NODE   READINESS GATES
+iris-api-7b47496675-26wmp   1/1     Running   0          2m37s   10.244.0.43    aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-n9m5b   1/1     Running   0          2m36s   10.244.0.158   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-t4lbs   1/1     Running   0          5m36s   10.244.0.192   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-vr6tm   1/1     Running   0          5m53s   10.244.0.222   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-zp8xj   1/1     Running   0          2m36s   10.244.0.44    aks-nodepool1-33512245-vmss000000   <none>           <none>
+load-gen                    1/1     Running   0          3m36s   10.244.0.81    aks-nodepool1-33512245-vmss000000   <none>           <none>
+pod "load-gen" deleted from iris namespace
+{"environment": "AKS aks-lab5-go on Azure", "samples": [{"cpu_percent": 273, "current_replicas": 5, "formula_raw": 28, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 273, "current_replicas": 2, "formula_raw": 11, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 166, "current_replicas": 5, "formula_raw": 17, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 273, "current_replicas": 5, "formula_raw": 28, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 273, "current_replicas": 5, "formula_raw": 28, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 166, "current_replicas": 5, "formula_raw": 17, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 273, "current_replicas": 5, "formula_raw": 28, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 166, "current_replicas": 5, "formula_raw": 17, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 166, "current_replicas": 5, "formula_raw": 17, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 166, "current_replicas": 5, "formula_raw": 17, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 166, "current_replicas": 5, "formula_raw": 17, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 273, "current_replicas": 5, "formula_raw": 28, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 273, "current_replicas": 5, "formula_raw": 28, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 273, "current_replicas": 2, "formula_raw": 11, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 273, "current_replicas": 5, "formula_raw": 28, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 4, "current_replicas": 2, "formula_raw": 1, "formula_bounded": 2, "desired_replicas": 2}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 273, "current_replicas": 2, "formula_raw": 11, "formula_bounded": 5, "desired_replicas": 5}, {"cpu_percent": 237, "current_replicas": 5, "formula_raw": 24, "formula_bounded": 5, "desired_replicas": 5}], "max_current_replicas": 5, "max_desired_replicas": 5}
+NAME                            READY   STATUS        RESTARTS   AGE     IP             NODE                                NOMINATED NODE   READINESS GATES
+pod/iris-api-7b47496675-26wmp   1/1     Running       0          5m48s   10.244.0.43    aks-nodepool1-33512245-vmss000000   <none>           <none>
+pod/iris-api-7b47496675-n9m5b   1/1     Running       0          5m47s   10.244.0.158   aks-nodepool1-33512245-vmss000000   <none>           <none>
+pod/iris-api-7b47496675-t4lbs   1/1     Terminating   0          8m47s   10.244.0.192   aks-nodepool1-33512245-vmss000000   <none>           <none>
+pod/iris-api-7b47496675-vr6tm   1/1     Terminating   0          9m4s    10.244.0.222   aks-nodepool1-33512245-vmss000000   <none>           <none>
+pod/iris-api-7b47496675-zp8xj   1/1     Terminating   0          5m47s   10.244.0.44    aks-nodepool1-33512245-vmss000000   <none>           <none>
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                 SELECTOR
+deployment.apps/iris-api   2/2     2            2           9m40s   iris-api     acrlab5go4271.azurecr.io/iris-api:v2   app=iris-api
+
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)        AGE     SELECTOR
+service/iris-api   LoadBalancer   10.0.237.167   158.158.149.17   80:30636/TCP   9m40s   app=iris-api
+
+NAME                                           REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/iris-api   Deployment/iris-api   cpu: 2%/50%   2         5         5          7m4s
+AUTO REPARATION SUR AKS
+iris-api-7b47496675-26wmp b6a5d62a-b9f9-4d56-8f77-e946336c08e4\npod "iris-api-7b47496675-26wmp" deleted from iris namespace
+Waiting for deployment "iris-api" rollout to finish: 1 of 2 updated replicas are available...
+Waiting for deployment "iris-api" rollout to finish: 1 of 2 updated replicas are available...
+deployment "iris-api" successfully rolled out
+{"trace": "evidence/partie4-aks/auto-reparation.jsonl", "requests": 86, "errors": 0, "versions": ["2.0.0"]}
+NAME                        READY   STATUS    RESTARTS   AGE     IP             NODE                                NOMINATED NODE   READINESS GATES
+iris-api-7b47496675-fpsk9   1/1     Running   0          35s     10.244.0.153   aks-nodepool1-33512245-vmss000000   <none>           <none>
+iris-api-7b47496675-n9m5b   1/1     Running   0          6m24s   10.244.0.158   aks-nodepool1-33512245-vmss000000   <none>           <none>
+PARTIE4_AKS_OK

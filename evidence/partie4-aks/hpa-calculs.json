@@ -1,0 +1,259 @@
+{
+  "environment": "AKS aks-lab5-go on Azure",
+  "samples": [
+    {
+      "cpu_percent": 273,
+      "current_replicas": 5,
+      "formula_raw": 28,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 2,
+      "formula_raw": 11,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 166,
+      "current_replicas": 5,
+      "formula_raw": 17,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 5,
+      "formula_raw": 28,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 5,
+      "formula_raw": 28,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 166,
+      "current_replicas": 5,
+      "formula_raw": 17,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 5,
+      "formula_raw": 28,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 166,
+      "current_replicas": 5,
+      "formula_raw": 17,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 166,
+      "current_replicas": 5,
+      "formula_raw": 17,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 166,
+      "current_replicas": 5,
+      "formula_raw": 17,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 166,
+      "current_replicas": 5,
+      "formula_raw": 17,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 5,
+      "formula_raw": 28,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 5,
+      "formula_raw": 28,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 2,
+      "formula_raw": 11,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 5,
+      "formula_raw": 28,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 4,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 273,
+      "current_replicas": 2,
+      "formula_raw": 11,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 237,
+      "current_replicas": 5,
+      "formula_raw": 24,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    }
+  ],
+  "max_current_replicas": 5,
+  "max_desired_replicas": 5
+}
