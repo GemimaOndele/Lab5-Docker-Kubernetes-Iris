@@ -1,0 +1,7 @@
+NAME                       READY   STATUS    RESTARTS   AGE     IP            NODE      NOMINATED NODE   READINESS GATES
+iris-api-9764db9cc-9gpq9   1/1     Running   0          5m5s    10.244.0.7    lab5-go   <none>           <none>
+iris-api-9764db9cc-bjx79   1/1     Running   0          2m15s   10.244.0.11   lab5-go   <none>           <none>
+iris-api-9764db9cc-ckj9g   1/1     Running   0          5m16s   10.244.0.6    lab5-go   <none>           <none>
+iris-api-9764db9cc-qknh5   1/1     Running   0          2m15s   10.244.0.10   lab5-go   <none>           <none>
+iris-api-9764db9cc-w9pfr   1/1     Running   0          2m15s   10.244.0.12   lab5-go   <none>           <none>
+load-gen                   1/1     Running   0          3m13s   10.244.0.9    lab5-go   <none>           <none>

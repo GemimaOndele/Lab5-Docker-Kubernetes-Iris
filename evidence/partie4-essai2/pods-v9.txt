@@ -1,0 +1,4 @@
+NAME                        READY   STATUS             RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+iris-api-657b84fbd6-w2rws   0/1     ImagePullBackOff   0          15s   10.244.0.8   lab5-go   <none>           <none>
+iris-api-9764db9cc-9gpq9    1/1     Running            0          49s   10.244.0.7   lab5-go   <none>           <none>
+iris-api-9764db9cc-ckj9g    1/1     Running            0          60s   10.244.0.6   lab5-go   <none>           <none>

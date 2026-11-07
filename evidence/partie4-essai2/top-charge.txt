@@ -1,0 +1,7 @@
+NAME                       CPU(cores)   MEMORY(bytes)   
+iris-api-9764db9cc-9gpq9   155m         100Mi           
+iris-api-9764db9cc-bjx79   152m         100Mi           
+iris-api-9764db9cc-ckj9g   165m         100Mi           
+iris-api-9764db9cc-qknh5   153m         100Mi           
+iris-api-9764db9cc-w9pfr   151m         100Mi           
+load-gen                   193m         2Mi             

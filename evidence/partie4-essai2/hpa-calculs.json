@@ -1,0 +1,259 @@
+{
+  "environment": "minikube on GitHub Actions; not AKS",
+  "samples": [
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 155,
+      "current_replicas": 5,
+      "formula_raw": 16,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 155,
+      "current_replicas": 5,
+      "formula_raw": 16,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 2,
+      "formula_raw": 14,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 2,
+      "formula_raw": 14,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 5,
+      "formula_raw": 34,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 5,
+      "current_replicas": 2,
+      "formula_raw": 1,
+      "formula_bounded": 2,
+      "desired_replicas": 2
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 331,
+      "current_replicas": 2,
+      "formula_raw": 14,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    },
+    {
+      "cpu_percent": 190,
+      "current_replicas": 5,
+      "formula_raw": 19,
+      "formula_bounded": 5,
+      "desired_replicas": 5
+    }
+  ],
+  "max_current_replicas": 5,
+  "max_desired_replicas": 5
+}
