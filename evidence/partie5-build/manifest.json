@@ -1,0 +1,13 @@
+{
+  "changeableAttributes": {
+    "deleteEnabled": true,
+    "listEnabled": true,
+    "readEnabled": true,
+    "writeEnabled": true
+  },
+  "createdTime": "2026-11-07T04:48:39.340816Z",
+  "digest": "sha256:7736ccf82abdcc706dee2ffbb6bd9ce67aeed2bc31818f06d68f6bd28d270db9",
+  "lastUpdateTime": "2026-11-07T04:48:39.340816Z",
+  "name": "e348d51",
+  "signed": false
+}

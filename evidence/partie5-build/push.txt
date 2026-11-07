@@ -1,0 +1,24 @@
+The push refers to repository [acrlab5go4271.azurecr.io/iris-api]
+701ebf72432d: Preparing
+6a243814602f: Preparing
+defafa8f7656: Preparing
+471b37f2489b: Preparing
+b97dd266539c: Preparing
+be4202518102: Preparing
+963bbe74d7fd: Preparing
+ba2541ec790a: Preparing
+dd57f90311a2: Preparing
+be4202518102: Waiting
+963bbe74d7fd: Waiting
+ba2541ec790a: Waiting
+dd57f90311a2: Waiting
+471b37f2489b: Pushed
+b97dd266539c: Pushed
+701ebf72432d: Pushed
+6a243814602f: Pushed
+be4202518102: Layer already exists
+963bbe74d7fd: Layer already exists
+ba2541ec790a: Layer already exists
+dd57f90311a2: Pushed
+defafa8f7656: Pushed
+e348d51: digest: sha256:7736ccf82abdcc706dee2ffbb6bd9ce67aeed2bc31818f06d68f6bd28d270db9 size: 2202
