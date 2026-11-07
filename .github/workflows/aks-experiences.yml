@@ -1,8 +1,6 @@
 name: Lab5 - experiences sur AKS
+# Le TP est clos : execution manuelle uniquement.
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/aks-experiences.yml']
   workflow_dispatch:
 permissions:
   contents: write
