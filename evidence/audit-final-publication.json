@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-07T05:12:49.296970+00:00",
+  "text_blobs_and_archive_entries_checked": 393,
+  "upstream_vulnerability_advisory_text_excluded": 2,
+  "findings": [],
+  "scope": "All fetched Git objects and readable proof archive entries; identifiers are not credentials. This automated check complements review of the lab sources."
+}
