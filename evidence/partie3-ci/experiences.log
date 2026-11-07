@@ -1,0 +1,149 @@
+URL du service minikube : http://192.168.49.2:31730
+{"service":"iris-api","version":"1.0.0","environment":"minikube","pod":"iris-api-57f65fcd4-trqzh"}
+NAME                       READY   STATUS    RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+iris-api-57f65fcd4-cr58h   1/1     Running   0          10s   10.244.0.4   lab5-go   <none>           <none>
+iris-api-57f65fcd4-trqzh   1/1     Running   0          10s   10.244.0.5   lab5-go   <none>           <none>
+EXPERIENCE 1a — suppression d’un seul pod de démonstration
+iris-api-57f65fcd4-cr58h 602ab865-828c-4a4f-9b0f-96658884e548
+pod "iris-api-57f65fcd4-cr58h" deleted from iris namespace
+NAME                       READY   STATUS              RESTARTS   AGE
+iris-api-57f65fcd4-cr58h   1/1     Terminating         0          11s
+iris-api-57f65fcd4-trqzh   1/1     Running             0          11s
+iris-api-57f65fcd4-x8rfp   0/1     ContainerCreating   0          1s
+NAME                       READY   STATUS    RESTARTS   AGE
+iris-api-57f65fcd4-trqzh   1/1     Running   0          13s
+iris-api-57f65fcd4-x8rfp   0/1     Running   0          3s
+NAME                       READY   STATUS    RESTARTS   AGE
+iris-api-57f65fcd4-trqzh   1/1     Running   0          15s
+iris-api-57f65fcd4-x8rfp   0/1     Running   0          5s
+NAME                       READY   STATUS    RESTARTS   AGE
+iris-api-57f65fcd4-trqzh   1/1     Running   0          17s
+iris-api-57f65fcd4-x8rfp   0/1     Running   0          7s
+NAME                       READY   STATUS    RESTARTS   AGE
+iris-api-57f65fcd4-trqzh   1/1     Running   0          19s
+iris-api-57f65fcd4-x8rfp   1/1     Running   0          9s
+Réconciliation après suppression : 9 secondes
+EXPERIENCE 1b — arrêt du processus du conteneur, même pod
+iris-api-57f65fcd4-trqzh 019435b1-dcce-4a98-be9d-4c00e787d978
+NAME                       READY   STATUS    RESTARTS   AGE
+iris-api-57f65fcd4-trqzh   1/1     Running   0          20s
+NAME                       READY   STATUS    RESTARTS     AGE
+iris-api-57f65fcd4-trqzh   0/1     Running   1 (2s ago)   22s
+NAME                       READY   STATUS    RESTARTS     AGE
+iris-api-57f65fcd4-trqzh   0/1     Running   1 (4s ago)   24s
+NAME                       READY   STATUS    RESTARTS     AGE
+iris-api-57f65fcd4-trqzh   0/1     Running   1 (6s ago)   26s
+NAME                       READY   STATUS    RESTARTS     AGE
+iris-api-57f65fcd4-trqzh   1/1     Running   1 (9s ago)   29s
+Redémarrages avant=0 après=1 ; retour prêt en 9 secondes
+EXPERIENCE 2 — compteurs en mémoire par pod
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-x8rfp"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-x8rfp"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-x8rfp"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-trqzh"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-trqzh"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-x8rfp"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-trqzh"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-x8rfp"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-trqzh"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-trqzh"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-x8rfp"}
+{"class":"setosa","confidence":1.0,"probabilities":{"setosa":1.0,"versicolor":0.0,"virginica":0.0},"version":"1.0.0","pod":"iris-api-57f65fcd4-x8rfp"}
+{"predictions":5,"backend":"memory","pod":"iris-api-57f65fcd4-trqzh"}
+{"predictions":5,"backend":"memory","pod":"iris-api-57f65fcd4-trqzh"}
+{"predictions":5,"backend":"memory","pod":"iris-api-57f65fcd4-trqzh"}
+{"predictions":7,"backend":"memory","pod":"iris-api-57f65fcd4-x8rfp"}
+{"predictions":7,"backend":"memory","pod":"iris-api-57f65fcd4-x8rfp"}
+{"predictions":7,"backend":"memory","pod":"iris-api-57f65fcd4-x8rfp"}
+{"predictions":5,"backend":"memory","pod":"iris-api-57f65fcd4-trqzh"}
+{"predictions":7,"backend":"memory","pod":"iris-api-57f65fcd4-x8rfp"}
+EXPERIENCE 3 — ConfigMap et variables d’environnement
+{"version":"1.0.0","environment":"minikube","log_level":"INFO","model":{"accuracy":0.9,"sklearn":"1.9.1","trained_at":"2026-11-07T00:11:25+00:00"},"pod":"iris-api-57f65fcd4-trqzh"}
+configmap/iris-config configured
+{"version":"1.0.0","environment":"minikube","log_level":"INFO","model":{"accuracy":0.9,"sklearn":"1.9.1","trained_at":"2026-11-07T00:11:25+00:00"},"pod":"iris-api-57f65fcd4-x8rfp"}
+deployment.apps/iris-api restarted
+Waiting for deployment "iris-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "iris-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "iris-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "iris-api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "iris-api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "iris-api" rollout to finish: 1 old replicas are pending termination...
+deployment "iris-api" successfully rolled out
+{"version":"1.0.0","environment":"minikube","log_level":"DEBUG","model":{"accuracy":0.9,"sklearn":"1.9.1","trained_at":"2026-11-07T00:11:25+00:00"},"pod":"iris-api-5c8475bdc-ksdfn"}
+horizontalpodautoscaler.autoscaling/iris-api created
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          0s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          3s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          5s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          7s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          9s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          11s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          13s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          15s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          17s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          20s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          22s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          24s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          26s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          28s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          30s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          32s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          35s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          37s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          39s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          41s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          43s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          45s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          47s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          50s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          52s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          54s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          56s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          58s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          60s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          62s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          65s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          67s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          69s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          71s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          73s
+NAME       REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+iris-api   Deployment/iris-api   cpu: <unknown>/50%   2         5         2          75s
+NAME                       READY   STATUS    RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+iris-api-5c8475bdc-ksdfn   1/1     Running   0          83s   10.244.0.8   lab5-go   <none>           <none>
+iris-api-5c8475bdc-rx9nm   1/1     Running   0          92s   10.244.0.7   lab5-go   <none>           <none>
+PARTIE3_EXPERIENCES_OK

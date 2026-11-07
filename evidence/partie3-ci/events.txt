@@ -1,0 +1,46 @@
+LAST SEEN   TYPE      REASON                         OBJECT                             MESSAGE
+2m2s        Normal    ScalingReplicaSet              deployment/iris-api                Scaled up replica set iris-api-57f65fcd4 from 0 to 2
+2m2s        Normal    SuccessfulCreate               replicaset/iris-api-57f65fcd4      Created pod: iris-api-57f65fcd4-trqzh
+2m2s        Normal    Created                        pod/iris-api-57f65fcd4-cr58h       Container created
+2m2s        Normal    Started                        pod/iris-api-57f65fcd4-cr58h       Container started
+2m2s        Normal    SuccessfulCreate               replicaset/iris-api-57f65fcd4      Created pod: iris-api-57f65fcd4-cr58h
+2m2s        Normal    Scheduled                      pod/iris-api-57f65fcd4-trqzh       Successfully assigned iris/iris-api-57f65fcd4-trqzh to lab5-go
+2m2s        Normal    Pulled                         pod/iris-api-57f65fcd4-cr58h       Container image "iris-api:v1" already present on machine and can be accessed by the pod
+2m2s        Normal    Scheduled                      pod/iris-api-57f65fcd4-cr58h       Successfully assigned iris/iris-api-57f65fcd4-cr58h to lab5-go
+116s        Warning   Unhealthy                      pod/iris-api-57f65fcd4-cr58h       Startup probe failed: Get "http://10.244.0.4:8000/health": dial tcp 10.244.0.4:8000: connect: connection refused
+112s        Normal    Killing                        pod/iris-api-57f65fcd4-cr58h       Stopping container iris-api
+112s        Normal    SuccessfulCreate               replicaset/iris-api-57f65fcd4      Created pod: iris-api-57f65fcd4-x8rfp
+112s        Normal    Scheduled                      pod/iris-api-57f65fcd4-x8rfp       Successfully assigned iris/iris-api-57f65fcd4-x8rfp to lab5-go
+111s        Normal    Pulled                         pod/iris-api-57f65fcd4-x8rfp       Container image "iris-api:v1" already present on machine and can be accessed by the pod
+111s        Normal    Created                        pod/iris-api-57f65fcd4-x8rfp       Container created
+111s        Normal    Started                        pod/iris-api-57f65fcd4-x8rfp       Container started
+105s        Warning   Unhealthy                      pod/iris-api-57f65fcd4-x8rfp       Startup probe failed: Get "http://10.244.0.6:8000/health": dial tcp 10.244.0.6:8000: connect: connection refused
+102s        Warning   Unhealthy                      pod/iris-api-57f65fcd4-trqzh       Liveness probe failed: Get "http://10.244.0.5:8000/health": dial tcp 10.244.0.5:8000: connect: connection refused
+101s        Normal    Pulled                         pod/iris-api-57f65fcd4-trqzh       Container image "iris-api:v1" already present on machine and can be accessed by the pod
+101s        Normal    Started                        pod/iris-api-57f65fcd4-trqzh       Container started
+101s        Normal    Created                        pod/iris-api-57f65fcd4-trqzh       Container created
+96s         Warning   Unhealthy                      pod/iris-api-57f65fcd4-trqzh       Startup probe failed: Get "http://10.244.0.5:8000/health": dial tcp 10.244.0.5:8000: connect: connection refused
+93s         Normal    Scheduled                      pod/iris-api-5c8475bdc-rx9nm       Successfully assigned iris/iris-api-5c8475bdc-rx9nm to lab5-go
+93s         Normal    SuccessfulCreate               replicaset/iris-api-5c8475bdc      Created pod: iris-api-5c8475bdc-rx9nm
+93s         Normal    ScalingReplicaSet              deployment/iris-api                Scaled up replica set iris-api-5c8475bdc from 0 to 1
+92s         Normal    Started                        pod/iris-api-5c8475bdc-rx9nm       Container started
+92s         Normal    Created                        pod/iris-api-5c8475bdc-rx9nm       Container created
+92s         Normal    Pulled                         pod/iris-api-5c8475bdc-rx9nm       Container image "iris-api:v1" already present on machine and can be accessed by the pod
+86s         Warning   Unhealthy                      pod/iris-api-5c8475bdc-rx9nm       Startup probe failed: Get "http://10.244.0.7:8000/health": dial tcp 10.244.0.7:8000: connect: connection refused
+84s         Normal    ScalingReplicaSet              deployment/iris-api                Scaled down replica set iris-api-57f65fcd4 from 2 to 1
+84s         Normal    Started                        pod/iris-api-5c8475bdc-ksdfn       Container started
+84s         Normal    Created                        pod/iris-api-5c8475bdc-ksdfn       Container created
+84s         Normal    Pulled                         pod/iris-api-5c8475bdc-ksdfn       Container image "iris-api:v1" already present on machine and can be accessed by the pod
+84s         Normal    Scheduled                      pod/iris-api-5c8475bdc-ksdfn       Successfully assigned iris/iris-api-5c8475bdc-ksdfn to lab5-go
+84s         Normal    ScalingReplicaSet              deployment/iris-api                Scaled up replica set iris-api-5c8475bdc from 1 to 2
+84s         Normal    SuccessfulDelete               replicaset/iris-api-57f65fcd4      Deleted pod: iris-api-57f65fcd4-trqzh
+84s         Normal    SuccessfulCreate               replicaset/iris-api-5c8475bdc      Created pod: iris-api-5c8475bdc-ksdfn
+84s         Normal    Killing                        pod/iris-api-57f65fcd4-trqzh       Stopping container iris-api
+78s         Warning   Unhealthy                      pod/iris-api-5c8475bdc-ksdfn       Startup probe failed: Get "http://10.244.0.8:8000/health": dial tcp 10.244.0.8:8000: connect: connection refused
+76s         Normal    Killing                        pod/iris-api-57f65fcd4-x8rfp       Stopping container iris-api
+76s         Normal    SuccessfulDelete               replicaset/iris-api-57f65fcd4      Deleted pod: iris-api-57f65fcd4-x8rfp
+76s         Normal    ScalingReplicaSet              deployment/iris-api                Scaled down replica set iris-api-57f65fcd4 from 1 to 0
+61s         Warning   FailedGetResourceMetric        horizontalpodautoscaler/iris-api   failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)
+61s         Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/iris-api   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)
+16s         Warning   FailedGetResourceMetric        horizontalpodautoscaler/iris-api   failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+16s         Warning   FailedComputeMetricsReplicas   horizontalpodautoscaler/iris-api   invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)

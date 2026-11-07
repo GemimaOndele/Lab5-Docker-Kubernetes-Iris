@@ -1,0 +1,178 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.21kB done
+#1 DONE 0.0s
+
+#2 [auth] docker/dockerfile:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#3 DONE 0.7s
+
+#4 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#4 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e done
+#4 sha256:528c92d70d7e39dbb3dd1c6681f6750c565c7e45b70527cda47c1a61495c1b6a 1.41kB / 1.41kB done
+#4 sha256:9d2b4f57f9e20f33279375ce25c6ff14f30f64270ed5c7b613b2b30256754f62 0B / 14.28MB 0.1s
+#4 sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 9.08kB / 9.08kB done
+#4 sha256:7b32114e84ca21aeb2d6f871a0b62b3a0762193f75d9afd048ee4cbe889f3148 1.13kB / 1.13kB done
+#4 sha256:9d2b4f57f9e20f33279375ce25c6ff14f30f64270ed5c7b613b2b30256754f62 14.28MB / 14.28MB 0.2s
+#4 extracting sha256:9d2b4f57f9e20f33279375ce25c6ff14f30f64270ed5c7b613b2b30256754f62
+#4 sha256:9d2b4f57f9e20f33279375ce25c6ff14f30f64270ed5c7b613b2b30256754f62 14.28MB / 14.28MB 0.3s done
+#4 extracting sha256:9d2b4f57f9e20f33279375ce25c6ff14f30f64270ed5c7b613b2b30256754f62 0.1s done
+#4 DONE 0.4s
+
+#5 [auth] library/python:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/python:3.13-slim
+#6 DONE 0.6s
+
+#7 [internal] load .dockerignore
+#7 transferring context: 127B done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 5.71kB done
+#8 DONE 0.0s
+
+#9 [builder 1/7] FROM docker.io/library/python:3.13-slim@sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc
+#9 resolve docker.io/library/python:3.13-slim@sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc done
+#9 sha256:09a17cad02668ae61ece136b4fd36ac3849e14f670ebedb637ea3e15580525bc 10.37kB / 10.37kB done
+#9 sha256:48d884813cf44e927cf64c5529dd630dd3b18338c6dc727991eef9b71e934a20 1.75kB / 1.75kB done
+#9 sha256:c0e8df9380519cf514d5fbb5aeaa7aa5de5f32c50330badcadc05cdabaae5566 5.66kB / 5.66kB done
+#9 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 0B / 29.86MB 0.1s
+#9 sha256:0069ea31add00b9f63dbb3f0bcee44990654c5e2c17ccfeaeae47e74edf44498 0B / 1.29MB 0.1s
+#9 sha256:faa890a31e98e11bc3138d9549c86441024fdb24bd555bb0bca17dc9a6c5b565 0B / 11.92MB 0.1s
+#9 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 29.86MB / 29.86MB 0.2s
+#9 sha256:faa890a31e98e11bc3138d9549c86441024fdb24bd555bb0bca17dc9a6c5b565 11.92MB / 11.92MB 0.4s
+#9 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 29.86MB / 29.86MB 0.6s done
+#9 sha256:0069ea31add00b9f63dbb3f0bcee44990654c5e2c17ccfeaeae47e74edf44498 1.29MB / 1.29MB 0.2s done
+#9 sha256:faa890a31e98e11bc3138d9549c86441024fdb24bd555bb0bca17dc9a6c5b565 11.92MB / 11.92MB 0.6s done
+#9 sha256:f7a79299dedd5c817d47e3f61cf6eecae73b92cb193a1ef52180a46b0161c50a 0B / 248B 0.6s
+#9 extracting sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41
+#9 sha256:f7a79299dedd5c817d47e3f61cf6eecae73b92cb193a1ef52180a46b0161c50a 248B / 248B 0.6s done
+#9 extracting sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 0.6s done
+#9 extracting sha256:0069ea31add00b9f63dbb3f0bcee44990654c5e2c17ccfeaeae47e74edf44498 0.1s done
+#9 extracting sha256:faa890a31e98e11bc3138d9549c86441024fdb24bd555bb0bca17dc9a6c5b565
+#9 extracting sha256:faa890a31e98e11bc3138d9549c86441024fdb24bd555bb0bca17dc9a6c5b565 0.4s done
+#9 extracting sha256:f7a79299dedd5c817d47e3f61cf6eecae73b92cb193a1ef52180a46b0161c50a
+#9 extracting sha256:f7a79299dedd5c817d47e3f61cf6eecae73b92cb193a1ef52180a46b0161c50a done
+#9 DONE 3.4s
+
+#10 [runtime 2/6] RUN groupadd --system --gid 10001 app  && useradd --system --uid 10001 --gid app --no-create-home app
+#10 0.188 useradd warning: app's uid 10001 is greater than SYS_UID_MAX 999
+#10 DONE 0.2s
+
+#11 [runtime 3/6] WORKDIR /app
+#11 DONE 0.0s
+
+#12 [builder 2/7] RUN python -m venv /opt/venv
+#12 DONE 2.2s
+
+#13 [builder 3/7] WORKDIR /build
+#13 DONE 0.0s
+
+#14 [builder 4/7] COPY requirements.txt .
+#14 DONE 0.0s
+
+#15 [builder 5/7] RUN pip install -r requirements.txt
+#15 0.386 Collecting fastapi==0.162.0 (from -r requirements.txt (line 1))
+#15 0.438   Downloading fastapi-0.162.0-py3-none-any.whl.metadata (26 kB)
+#15 0.467 Collecting uvicorn==0.54.0 (from -r requirements.txt (line 2))
+#15 0.477   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+#15 0.540 Collecting scikit-learn==1.9.1 (from -r requirements.txt (line 3))
+#15 0.551   Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+#15 0.661 Collecting numpy==2.5.4 (from -r requirements.txt (line 4))
+#15 0.672   Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+#15 0.692 Collecting joblib==1.6.0 (from -r requirements.txt (line 5))
+#15 0.702   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#15 0.725 Collecting redis==8.1.0 (from -r requirements.txt (line 6))
+#15 0.735   Downloading redis-8.1.0-py3-none-any.whl.metadata (16 kB)
+#15 0.759 Collecting starlette>=0.46.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#15 0.769   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+#15 0.828 Collecting pydantic>=2.9.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#15 0.840   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+#15 0.874 Collecting typing-extensions>=4.8.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#15 0.885   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#15 0.901 Collecting typing-inspection>=0.4.2 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#15 0.911   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+#15 0.929 Collecting annotated-doc>=0.0.2 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#15 0.939   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#15 0.960 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#15 0.970   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+#15 0.992 Collecting click>=7.0 (from uvicorn==0.54.0->-r requirements.txt (line 2))
+#15 1.003   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#15 1.020 Collecting h11>=0.8 (from uvicorn==0.54.0->-r requirements.txt (line 2))
+#15 1.030   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#15 1.133 Collecting scipy>=1.10.0 (from scikit-learn==1.9.1->-r requirements.txt (line 3))
+#15 1.145   Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#15 1.178 Collecting narwhals>=2.0.1 (from scikit-learn==1.9.1->-r requirements.txt (line 3))
+#15 1.189   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+#15 1.208 Collecting threadpoolctl>=3.5.0 (from scikit-learn==1.9.1->-r requirements.txt (line 3))
+#15 1.219   Downloading threadpoolctl-3.8.0-py3-none-any.whl.metadata (29 kB)
+#15 1.238 Collecting cloudpickle>=3.0 (from joblib==1.6.0->-r requirements.txt (line 5))
+#15 1.249   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#15 1.268 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#15 1.280   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#15 1.652 Collecting pydantic-core==2.50.4 (from pydantic>=2.9.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#15 1.663   Downloading pydantic_core-2.50.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+#15 1.686 Collecting anyio<5,>=4.0.0 (from starlette>=0.46.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#15 1.697   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#15 1.715 Collecting idna>=2.8 (from anyio<5,>=4.0.0->starlette>=0.46.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#15 1.725   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#15 1.739 Downloading fastapi-0.162.0-py3-none-any.whl (148 kB)
+#15 1.751 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#15 1.762 Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)
+#15 1.806    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 225.4 MB/s  0:00:00
+#15 1.824 Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+#15 1.843    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 955.3 MB/s  0:00:00
+#15 1.854 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#15 1.865 Downloading redis-8.1.0-py3-none-any.whl (560 kB)
+#15 1.867    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 560.6/560.6 kB 998.6 MB/s  0:00:00
+#15 1.877 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#15 1.887 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#15 1.897 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#15 1.907 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#15 1.917 Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+#15 1.928 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#15 1.938 Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+#15 1.949 Downloading pydantic_core-2.50.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#15 1.952    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 1.5 GB/s  0:00:00
+#15 1.963 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#15 1.973 Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#15 2.045    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 500.9 MB/s  0:00:00
+#15 2.056 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#15 2.067 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#15 2.077 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#15 2.087 Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+#15 2.098 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#15 2.108 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#15 2.228 Installing collected packages: typing-extensions, threadpoolctl, redis, numpy, narwhals, idna, h11, cloudpickle, click, annotated-types, annotated-doc, uvicorn, typing-inspection, scipy, pydantic-core, opentelemetry-api, joblib, anyio, starlette, scikit-learn, pydantic, fastapi
+#15 8.126 
+#15 8.127 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 click-8.5.1 cloudpickle-3.1.2 fastapi-0.162.0 h11-0.16.0 idna-3.20 joblib-1.6.0 narwhals-2.28.0 numpy-2.5.4 opentelemetry-api-1.45.2 pydantic-2.14.3 pydantic-core-2.50.4 redis-8.1.0 scikit-learn-1.9.1 scipy-1.18.1 starlette-1.10.0 threadpoolctl-3.8.0 typing-extensions-4.16.0 typing-inspection-0.4.5 uvicorn-0.54.0
+#15 DONE 11.7s
+
+#16 [builder 6/7] COPY train.py .
+#16 DONE 0.0s
+
+#17 [builder 7/7] RUN python train.py /build/model/model.joblib
+#17 0.856 Model saved to /build/model/model.joblib - test accuracy = 0.900
+#17 0.856 {"accuracy": 0.9, "sklearn": "1.9.1", "trained_at": "2026-11-07T00:11:25+00:00"}
+#17 DONE 1.0s
+
+#18 [runtime 4/6] COPY --from=builder /opt/venv /opt/venv
+#18 DONE 4.3s
+
+#19 [runtime 5/6] COPY --from=builder /build/model ./model
+#19 DONE 0.0s
+
+#20 [runtime 6/6] COPY app ./app
+#20 DONE 0.0s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 1.7s done
+#21 writing image sha256:689269bdded5dd8ceb20e9b6af9f875393cf905f4f76a414b04769e5384ab06c done
+#21 naming to docker.io/library/iris-api:v1 done
+#21 DONE 1.7s

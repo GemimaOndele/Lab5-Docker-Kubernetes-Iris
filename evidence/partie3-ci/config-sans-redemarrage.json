@@ -1,0 +1,1 @@
+{"version":"1.0.0","environment":"minikube","log_level":"INFO","model":{"accuracy":0.9,"sklearn":"1.9.1","trained_at":"2026-11-07T00:11:25+00:00"},"pod":"iris-api-57f65fcd4-x8rfp"}

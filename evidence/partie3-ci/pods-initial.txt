@@ -1,0 +1,3 @@
+NAME                       READY   STATUS    RESTARTS   AGE   IP           NODE      NOMINATED NODE   READINESS GATES
+iris-api-57f65fcd4-cr58h   1/1     Running   0          8s    10.244.0.4   lab5-go   <none>           <none>
+iris-api-57f65fcd4-trqzh   1/1     Running   0          8s    10.244.0.5   lab5-go   <none>           <none>

@@ -1,0 +1,19 @@
+{
+    "apiVersion": "v1",
+    "data": {
+        "ENVIRONMENT": "minikube",
+        "LOG_LEVEL": "DEBUG",
+        "STARTUP_DELAY": "5"
+    },
+    "kind": "ConfigMap",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"data\":{\"ENVIRONMENT\":\"minikube\",\"LOG_LEVEL\":\"DEBUG\",\"STARTUP_DELAY\":\"5\"},\"kind\":\"ConfigMap\",\"metadata\":{\"annotations\":{},\"name\":\"iris-config\",\"namespace\":\"iris\"}}\n"
+        },
+        "creationTimestamp": "2026-11-07T00:13:34Z",
+        "name": "iris-config",
+        "namespace": "iris",
+        "resourceVersion": "637",
+        "uid": "c5efb2bb-5661-42ab-8658-8f61900efb61"
+    }
+}

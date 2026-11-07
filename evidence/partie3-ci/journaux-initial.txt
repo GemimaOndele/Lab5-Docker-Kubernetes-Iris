@@ -1,0 +1,14 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+2026-11-07 00:13:43,333 INFO Model loaded (version=1.0.0, accuracy=0.9)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     10.244.0.1:50190 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50206 - "GET /ready HTTP/1.1" 200 OK
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+2026-11-07 00:13:43,369 INFO Model loaded (version=1.0.0, accuracy=0.9)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     10.244.0.1:33758 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:33762 - "GET /ready HTTP/1.1" 200 OK
