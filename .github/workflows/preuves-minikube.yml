@@ -1,8 +1,6 @@
 name: Lab5 - preuves Kubernetes
+# Le TP est clos : execution manuelle uniquement.
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/preuves-minikube.yml']
   workflow_dispatch:
 permissions:
   contents: read
