@@ -8,6 +8,7 @@ metadata:
 spec:
   replicas: 2
   revisionHistoryLimit: 5
+  progressDeadlineSeconds: 120
   selector:
     matchLabels:
       app: iris-api
@@ -21,6 +22,7 @@ spec:
       labels:
         app: iris-api
     spec:
+      terminationGracePeriodSeconds: 35
       securityContext:
         runAsNonRoot: true
         seccompProfile:
@@ -32,6 +34,10 @@ spec:
           ports:
             - name: http
               containerPort: 8000
+          lifecycle:
+            preStop:
+              exec:
+                command: ["python", "-c", "import time; time.sleep(5)"]
           envFrom:
             - configMapRef:
                 name: iris-config
@@ -77,3 +83,4 @@ spec:
       volumes:
         - name: tmp
           emptyDir: {}
+
