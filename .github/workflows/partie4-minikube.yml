@@ -1,8 +1,6 @@
 name: Lab5 - rolling update et HPA sur minikube
+# Le TP est clos : execution manuelle uniquement.
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/partie4-minikube.yml']
   workflow_dispatch:
 permissions:
   actions: read
