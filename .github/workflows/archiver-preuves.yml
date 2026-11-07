@@ -19,11 +19,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p evidence/archives
-          gh api repos/GemimaOndele/Lab5-Docker-Kubernetes-Iris/actions/artifacts/13550504512/zip > evidence/archives/lab5-minikube-preuves.zip
-          unzip -t evidence/archives/lab5-minikube-preuves.zip
-          unzip -o evidence/archives/lab5-minikube-preuves.zip -d evidence/
+          gh api repos/GemimaOndele/Lab5-Docker-Kubernetes-Iris/actions/artifacts/13552366168/zip > evidence/archives/lab5-partie4-essai2.zip
+          unzip -t evidence/archives/lab5-partie4-essai2.zip
+          unzip -o evidence/archives/lab5-partie4-essai2.zip -d evidence/partie4-essai2/
           git config user.name "GemimaOndele"
           git config user.email "128593071+GemimaOndele@users.noreply.github.com"
-          git add evidence/partie1-ci evidence/partie3-ci evidence/archives/lab5-minikube-preuves.zip
+          git add evidence/partie4-essai2 evidence/archives/lab5-partie4-essai2.zip
           git diff --cached --quiet || git commit -m "Sauvegarder les preuves reelles des experiences Kubernetes"
           git push origin HEAD:main
