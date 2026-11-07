@@ -1,8 +1,6 @@
 name: Lab5 - archiver les preuves
+# Le TP est clos : execution manuelle uniquement.
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/archiver-preuves.yml']
   workflow_dispatch:
 permissions:
   actions: read
