@@ -1,0 +1,147 @@
+name: Lab5 - CI CD Iris sur AKS
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'Dockerfile'
+      - 'requirements*.txt'
+      - 'k8s/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lab5-aks
+  cancel-in-progress: false
+env:
+  ACR_NAME: acrlab5go4271
+  RESOURCE_GROUP: rg-lab5-go
+  AKS_NAME: aks-lab5-go
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - name: Entrainer le modele et tester les routes de l API
+        run: |
+          mkdir -p evidence/partie5-tests
+          python train.py model/model.joblib
+          python -m pytest -q --junitxml=evidence/partie5-tests/pytest.xml
+      - uses: actions/upload-artifact@v6
+        with:
+          name: lab5-tests-cicd
+          path: evidence/partie5-tests/
+          retention-days: 7
+  build-push:
+    needs: test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      image: ${{ steps.image.outputs.image }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: azure/login@v3
+        with:
+          client-id: dc55bd12-6a90-49b4-a72d-10beb09e825a
+          tenant-id: a2697119-66c5-4126-9991-b0a8d15d367f
+          subscription-id: 5d564eeb-c928-4d01-9948-76ba3fc789d0
+      - name: Construire une image liee au commit et la publier
+        id: image
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/partie5-build
+          image="$ACR_NAME.azurecr.io/iris-api:${GITHUB_SHA::7}"
+          echo "image=$image" >> "$GITHUB_OUTPUT"
+          az acr login -n "$ACR_NAME"
+          docker build --platform linux/amd64 --build-arg APP_VERSION="${GITHUB_SHA::7}" -t "$image" .
+          docker push "$image" | tee evidence/partie5-build/push.txt
+          docker image inspect "$image" --format '{{json .}}' > evidence/partie5-build/image.json
+          az acr repository show -n "$ACR_NAME" --image "iris-api:${GITHUB_SHA::7}" -o json > evidence/partie5-build/manifest.json
+          container=$(docker create "$image")
+          docker cp "$container:/app/model/model.joblib" evidence/partie5-build/model.joblib
+          docker rm "$container"
+          sha256sum evidence/partie5-build/model.joblib > evidence/partie5-build/model-sha256.txt
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: lab5-image-cicd
+          path: evidence/partie5-build/
+          retention-days: 7
+  deploy:
+    needs: build-push
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: azure/login@v3
+        with:
+          client-id: dc55bd12-6a90-49b4-a72d-10beb09e825a
+          tenant-id: a2697119-66c5-4126-9991-b0a8d15d367f
+          subscription-id: 5d564eeb-c928-4d01-9948-76ba3fc789d0
+      - name: Appliquer declarativement la nouvelle image puis verifier l API
+        env:
+          IMAGE: ${{ needs.build-push.outputs.image }}
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/partie5-deploiement
+          export KUBECONFIG="$RUNNER_TEMP/lab5-kubeconfig"
+          az aks get-credentials -g "$RESOURCE_GROUP" -n "$AKS_NAME" --file "$KUBECONFIG"
+          sed "s#image: iris-api:v1.*#image: $IMAGE#" k8s/deployment.yaml > "$RUNNER_TEMP/deployment.yaml"
+          kubectl --context=aks-lab5-go -n iris apply -f "$RUNNER_TEMP/deployment.yaml" -f k8s/service.yaml -f k8s/hpa.yaml
+          kubectl --context=aks-lab5-go -n iris rollout status deployment/iris-api --timeout=300s
+          IP=$(kubectl --context=aks-lab5-go -n iris get service iris-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+          curl -fsS "http://$IP/" | tee evidence/partie5-deploiement/api-version.json
+          EXPECTED_VERSION="${GITHUB_SHA::7}" python3 - <<'PY'
+          import json,os
+          d=json.load(open('evidence/partie5-deploiement/api-version.json'))
+          assert d['version']==os.environ['EXPECTED_VERSION'],d
+          print('VERSION_DU_COMMIT_VERIFIEE',d['version'])
+          PY
+          curl -fsS -H 'Content-Type: application/json' -d '{"features":[5.1,3.5,1.4,0.2]}' "http://$IP/predict" > evidence/partie5-deploiement/prediction.json
+          kubectl --context=aks-lab5-go -n iris get pods,deploy,svc,hpa -o wide > evidence/partie5-deploiement/etat-final.txt
+          kubectl --context=aks-lab5-go -n iris get deployment iris-api -o json > evidence/partie5-deploiement/deployment.json
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: lab5-deploiement-cicd
+          path: evidence/partie5-deploiement/
+          retention-days: 7
+  archive:
+    needs: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v7
+      - name: Sauvegarder le modele et les preuves avant nettoyage
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh run download "$GITHUB_RUN_ID" -n lab5-tests-cicd -D evidence/partie5-tests
+          gh run download "$GITHUB_RUN_ID" -n lab5-image-cicd -D evidence/partie5-build
+          gh run download "$GITHUB_RUN_ID" -n lab5-deploiement-cicd -D evidence/partie5-deploiement
+          git fetch --unshallow origin || git fetch origin main
+          python scripts/audit-publication.py --report evidence/partie5-deploiement/audit-publication.json
+          mkdir -p evidence/archives
+          zip -qr evidence/archives/lab5-cicd-preuves.zip evidence/partie5-tests evidence/partie5-build evidence/partie5-deploiement
+          git config user.name "GemimaOndele"
+          git config user.email "128593071+GemimaOndele@users.noreply.github.com"
+          git add evidence/partie5-tests evidence/partie5-build evidence/partie5-deploiement evidence/archives/lab5-cicd-preuves.zip
+          git diff --cached --quiet || git commit -m "Archiver le modele et les preuves du pipeline CI CD"
+          git pull --rebase origin main
+          git push origin HEAD:main
