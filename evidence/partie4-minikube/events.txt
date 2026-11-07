@@ -1,0 +1,79 @@
+LAST SEEN   TYPE      REASON              OBJECT                             MESSAGE
+8m33s       Normal    ScalingReplicaSet   deployment/iris-api                Scaled up replica set iris-api-767578d758 from 0 to 2
+8m33s       Normal    SuccessfulCreate    replicaset/iris-api-767578d758     Created pod: iris-api-767578d758-zqh6c
+8m33s       Normal    SuccessfulCreate    replicaset/iris-api-767578d758     Created pod: iris-api-767578d758-sjn2p
+8m33s       Normal    Scheduled           pod/iris-api-767578d758-zqh6c      Successfully assigned iris/iris-api-767578d758-zqh6c to lab5-go
+8m33s       Normal    Scheduled           pod/iris-api-767578d758-sjn2p      Successfully assigned iris/iris-api-767578d758-sjn2p to lab5-go
+8m32s       Normal    Started             pod/iris-api-767578d758-sjn2p      Container started
+8m32s       Normal    Started             pod/iris-api-767578d758-zqh6c      Container started
+8m32s       Normal    Created             pod/iris-api-767578d758-zqh6c      Container created
+8m32s       Normal    Pulled              pod/iris-api-767578d758-zqh6c      Container image "iris-api:v1" already present on machine and can be accessed by the pod
+8m32s       Normal    Pulled              pod/iris-api-767578d758-sjn2p      Container image "iris-api:v1" already present on machine and can be accessed by the pod
+8m32s       Normal    Created             pod/iris-api-767578d758-sjn2p      Container created
+8m22s       Warning   Unhealthy           pod/iris-api-767578d758-sjn2p      Startup probe failed: Get "http://10.244.0.5:8000/health": dial tcp 10.244.0.5:8000: connect: connection refused
+8m22s       Warning   Unhealthy           pod/iris-api-767578d758-zqh6c      Startup probe failed: Get "http://10.244.0.4:8000/health": dial tcp 10.244.0.4:8000: connect: connection refused
+7m47s       Normal    ScalingReplicaSet   deployment/iris-api                Scaled up replica set iris-api-9764db9cc from 0 to 1
+7m47s       Normal    Scheduled           pod/iris-api-9764db9cc-tvj95       Successfully assigned iris/iris-api-9764db9cc-tvj95 to lab5-go
+7m47s       Normal    SuccessfulCreate    replicaset/iris-api-9764db9cc      Created pod: iris-api-9764db9cc-tvj95
+7m46s       Normal    Started             pod/iris-api-9764db9cc-tvj95       Container started
+7m46s       Normal    Created             pod/iris-api-9764db9cc-tvj95       Container created
+7m46s       Normal    Pulled              pod/iris-api-9764db9cc-tvj95       Container image "iris-api:v2" already present on machine and can be accessed by the pod
+7m38s       Warning   Unhealthy           pod/iris-api-9764db9cc-tvj95       Startup probe failed: Get "http://10.244.0.6:8000/health": dial tcp 10.244.0.6:8000: connect: connection refused
+7m36s       Normal    SuccessfulCreate    replicaset/iris-api-9764db9cc      Created pod: iris-api-9764db9cc-gpwkg
+7m36s       Normal    Killing             pod/iris-api-767578d758-sjn2p      Stopping container iris-api
+7m36s       Normal    ScalingReplicaSet   deployment/iris-api                Scaled down replica set iris-api-767578d758 from 2 to 1
+7m36s       Normal    SuccessfulDelete    replicaset/iris-api-767578d758     Deleted pod: iris-api-767578d758-sjn2p
+7m36s       Normal    ScalingReplicaSet   deployment/iris-api                Scaled up replica set iris-api-9764db9cc from 1 to 2
+7m36s       Normal    Started             pod/iris-api-9764db9cc-gpwkg       Container started
+7m36s       Normal    Created             pod/iris-api-9764db9cc-gpwkg       Container created
+7m36s       Normal    Pulled              pod/iris-api-9764db9cc-gpwkg       Container image "iris-api:v2" already present on machine and can be accessed by the pod
+7m36s       Normal    Scheduled           pod/iris-api-9764db9cc-gpwkg       Successfully assigned iris/iris-api-9764db9cc-gpwkg to lab5-go
+7m28s       Warning   Unhealthy           pod/iris-api-9764db9cc-gpwkg       Startup probe failed: Get "http://10.244.0.7:8000/health": dial tcp 10.244.0.7:8000: connect: connection refused
+7m26s       Normal    ScalingReplicaSet   deployment/iris-api                Scaled down replica set iris-api-767578d758 from 1 to 0
+7m26s       Normal    SuccessfulDelete    replicaset/iris-api-767578d758     Deleted pod: iris-api-767578d758-zqh6c
+7m26s       Normal    Killing             pod/iris-api-767578d758-zqh6c      Stopping container iris-api
+7m20s       Warning   Unhealthy           pod/iris-api-767578d758-zqh6c      Readiness probe failed: Get "http://10.244.0.4:8000/ready": dial tcp 10.244.0.4:8000: connect: connection refused
+7m1s        Normal    SuccessfulCreate    replicaset/iris-api-657b84fbd6     Created pod: iris-api-657b84fbd6-7hvps
+7m1s        Normal    ScalingReplicaSet   deployment/iris-api                Scaled up replica set iris-api-657b84fbd6 from 0 to 1
+7m1s        Normal    Scheduled           pod/iris-api-657b84fbd6-7hvps      Successfully assigned iris/iris-api-657b84fbd6-7hvps to lab5-go
+7m          Normal    BackOff             pod/iris-api-657b84fbd6-7hvps      Back-off pulling image "iris-api:v9"
+7m          Warning   Failed              pod/iris-api-657b84fbd6-7hvps      Error: ImagePullBackOff
+6m45s       Warning   Failed              pod/iris-api-657b84fbd6-7hvps      Error: ErrImagePull
+6m45s       Normal    Pulling             pod/iris-api-657b84fbd6-7hvps      Pulling image "iris-api:v9"
+6m45s       Warning   Failed              pod/iris-api-657b84fbd6-7hvps      Failed to pull image "iris-api:v9": failed to pull and unpack image "docker.io/library/iris-api:v9": failed to resolve reference "docker.io/library/iris-api:v9": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+6m44s       Normal    ScalingReplicaSet   deployment/iris-api                Scaled down replica set iris-api-657b84fbd6 from 1 to 0
+6m44s       Normal    SuccessfulDelete    replicaset/iris-api-657b84fbd6     Deleted pod: iris-api-657b84fbd6-7hvps
+5m46s       Normal    Scheduled           pod/load-gen                       Successfully assigned iris/load-gen to lab5-go
+5m45s       Normal    Pulling             pod/load-gen                       Pulling image "busybox:1.37"
+5m45s       Normal    Pulled              pod/load-gen                       Successfully pulled image "busybox:1.37" in 688ms (688ms including waiting). Image size: 2222118 bytes.
+5m45s       Normal    Created             pod/load-gen                       Container created
+5m45s       Normal    Started             pod/load-gen                       Container started
+4m46s       Normal    SuccessfulCreate    replicaset/iris-api-9764db9cc      Created pod: iris-api-9764db9cc-5hpwj
+4m46s       Normal    Scheduled           pod/iris-api-9764db9cc-g4nx9       Successfully assigned iris/iris-api-9764db9cc-g4nx9 to lab5-go
+4m46s       Normal    Scheduled           pod/iris-api-9764db9cc-2j8fx       Successfully assigned iris/iris-api-9764db9cc-2j8fx to lab5-go
+4m46s       Normal    ScalingReplicaSet   deployment/iris-api                Scaled up replica set iris-api-9764db9cc from 2 to 5
+4m46s       Normal    SuccessfulRescale   horizontalpodautoscaler/iris-api   New size: 5; reason: cpu resource utilization (percentage of request) above target
+4m46s       Normal    Scheduled           pod/iris-api-9764db9cc-5hpwj       Successfully assigned iris/iris-api-9764db9cc-5hpwj to lab5-go
+4m46s       Normal    SuccessfulCreate    replicaset/iris-api-9764db9cc      Created pod: iris-api-9764db9cc-2j8fx
+4m46s       Normal    SuccessfulCreate    replicaset/iris-api-9764db9cc      Created pod: iris-api-9764db9cc-g4nx9
+4m45s       Normal    Created             pod/iris-api-9764db9cc-5hpwj       Container created
+4m45s       Normal    Created             pod/iris-api-9764db9cc-g4nx9       Container created
+4m45s       Normal    Pulled              pod/iris-api-9764db9cc-2j8fx       Container image "iris-api:v2" already present on machine and can be accessed by the pod
+4m45s       Normal    Created             pod/iris-api-9764db9cc-2j8fx       Container created
+4m45s       Normal    Started             pod/iris-api-9764db9cc-2j8fx       Container started
+4m45s       Normal    Started             pod/iris-api-9764db9cc-g4nx9       Container started
+4m45s       Normal    Started             pod/iris-api-9764db9cc-5hpwj       Container started
+4m45s       Normal    Pulled              pod/iris-api-9764db9cc-g4nx9       Container image "iris-api:v2" already present on machine and can be accessed by the pod
+4m45s       Normal    Pulled              pod/iris-api-9764db9cc-5hpwj       Container image "iris-api:v2" already present on machine and can be accessed by the pod
+4m36s       Warning   Unhealthy           pod/iris-api-9764db9cc-2j8fx       Startup probe failed: Get "http://10.244.0.10:8000/health": dial tcp 10.244.0.10:8000: connect: connection refused
+4m35s       Warning   Unhealthy           pod/iris-api-9764db9cc-g4nx9       Startup probe failed: Get "http://10.244.0.12:8000/health": dial tcp 10.244.0.12:8000: connect: connection refused
+4m34s       Warning   Unhealthy           pod/iris-api-9764db9cc-5hpwj       Startup probe failed: Get "http://10.244.0.11:8000/health": dial tcp 10.244.0.11:8000: connect: connection refused
+2m28s       Normal    Killing             pod/load-gen                       Stopping container load-gen
+1s          Normal    Killing             pod/iris-api-9764db9cc-g4nx9       Stopping container iris-api
+1s          Normal    Killing             pod/iris-api-9764db9cc-2j8fx       Stopping container iris-api
+1s          Normal    SuccessfulDelete    replicaset/iris-api-9764db9cc      Deleted pod: iris-api-9764db9cc-2j8fx
+1s          Normal    SuccessfulRescale   horizontalpodautoscaler/iris-api   New size: 2; reason: All metrics below target
+1s          Normal    ScalingReplicaSet   deployment/iris-api                Scaled down replica set iris-api-9764db9cc from 5 to 2
+1s          Normal    Killing             pod/iris-api-9764db9cc-5hpwj       Stopping container iris-api
+1s          Normal    SuccessfulDelete    replicaset/iris-api-9764db9cc      Deleted pod: iris-api-9764db9cc-g4nx9
+1s          Normal    SuccessfulDelete    replicaset/iris-api-9764db9cc      Deleted pod: iris-api-9764db9cc-5hpwj

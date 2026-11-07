@@ -1,0 +1,15 @@
+NAME                           READY   STATUS        RESTARTS   AGE     IP            NODE      NOMINATED NODE   READINESS GATES
+pod/iris-api-9764db9cc-2j8fx   1/1     Terminating   0          4m46s   10.244.0.10   lab5-go   <none>           <none>
+pod/iris-api-9764db9cc-5hpwj   1/1     Terminating   0          4m46s   10.244.0.11   lab5-go   <none>           <none>
+pod/iris-api-9764db9cc-g4nx9   1/1     Terminating   0          4m46s   10.244.0.12   lab5-go   <none>           <none>
+pod/iris-api-9764db9cc-gpwkg   1/1     Running       0          7m36s   10.244.0.7    lab5-go   <none>           <none>
+pod/iris-api-9764db9cc-tvj95   1/1     Running       0          7m47s   10.244.0.6    lab5-go   <none>           <none>
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES        SELECTOR
+deployment.apps/iris-api   2/2     2            2           8m33s   iris-api     iris-api:v2   app=iris-api
+
+NAME               TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE     SELECTOR
+service/iris-api   LoadBalancer   10.111.114.60   <pending>     80:32737/TCP   8m33s   app=iris-api
+
+NAME                                           REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/iris-api   Deployment/iris-api   cpu: 7%/50%   2         5         5          5m46s
