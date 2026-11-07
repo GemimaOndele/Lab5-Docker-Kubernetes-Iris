@@ -86,4 +86,13 @@ summary={'environment':'AKS aks-lab5-go on Azure','samples':samples,'max_current
 assert summary['max_current_replicas']>2,'No scale-out observed'
 PY
 kc get pods,deploy,svc,hpa -o wide | tee evidence/partie4-aks/etat-final.txt
+echo 'AUTO REPARATION SUR AKS'
+trace evidence/partie4-aks/auto-reparation.jsonl 35 & TRACER=$!
+POD=$(kc get pods -l app=iris-api -o json | python3 -c 'import json,sys;d=json.load(sys.stdin);print(next(x["metadata"]["name"] for x in d["items"] if not x["metadata"].get("deletionTimestamp") and x["status"]["phase"]=="Running"))')
+kc get pod "$POD" -o jsonpath='{.metadata.name} {.metadata.uid}{"\\n"}' | tee evidence/partie4-aks/pod-supprime.txt
+kc delete pod "$POD" --wait=false
+sleep 2
+kc rollout status deployment/iris-api --timeout=120s
+wait "$TRACER"
+kc get pods -o wide | tee evidence/partie4-aks/pods-apres-auto-reparation.txt
 echo PARTIE4_AKS_OK
